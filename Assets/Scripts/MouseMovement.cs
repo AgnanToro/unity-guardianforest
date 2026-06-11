@@ -52,14 +52,26 @@ public class MouseMovement : MonoBehaviour
 {
     public float mouseSensitivity = 100f;
 
-    float xRotation = 0f;
-    float yRotation = 0f;
+    // Drag Main Camera ke sini
+    public Transform cameraTransform;
+
+    // Batas kamera lihat atas-bawah
+    public float minLookAngle = -20f;
+    public float maxLookAngle = 45f;
 
     public bool inventoryOpen = false;
+
+    private float xRotation = 0f;
 
     void Start()
     {
         LockCursor();
+
+        // Kalau belum diisi manual, cari kamera utama otomatis
+        if (cameraTransform == null && Camera.main != null)
+        {
+            cameraTransform = Camera.main.transform;
+        }
     }
 
     void Update()
@@ -83,15 +95,21 @@ public class MouseMovement : MonoBehaviour
         if (inventoryOpen)
             return;
 
+        if (cameraTransform == null)
+            return;
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
+        // Kamera atas-bawah
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, minLookAngle, maxLookAngle);
 
-        yRotation += mouseX;
+        // Kamera cuma rotasi atas-bawah
+        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        // Player muter kiri-kanan
+        transform.Rotate(Vector3.up * mouseX);
     }
 
     void LockCursor()
