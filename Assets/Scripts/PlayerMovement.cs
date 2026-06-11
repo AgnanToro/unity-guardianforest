@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed = 5f;
     public float runSpeed = 12f;
     public float gravity = -25f;
+
     public float jumpHeight = 1.5f;
 
     // Delay untuk jump diam

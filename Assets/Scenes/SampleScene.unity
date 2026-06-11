@@ -647,9 +647,8 @@ GameObject:
   m_Component:
   - component: {fileID: 60968592}
   - component: {fileID: 60968591}
-  - component: {fileID: 60968593}
-  - component: {fileID: 60968594}
-  - component: {fileID: 60968595}
+  - component: {fileID: 60968597}
+  - component: {fileID: 60968596}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -702,7 +701,24 @@ Transform:
   - {fileID: 2025290901}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &60968593
+--- !u!114 &60968596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60968588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd80896ab71c9f46b8acb2dca304445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 100
+  cameraTransform: {fileID: 963194228}
+  minLookAngle: -15
+  maxLookAngle: 35
+  inventoryOpen: 0
+--- !u!114 &60968597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -731,40 +747,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   animator: {fileID: 2025290902}
---- !u!114 &60968594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60968588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dd80896ab71c9f46b8acb2dca304445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseSensitivity: 100
-  cameraTransform: {fileID: 963194228}
-  minLookAngle: -15
-  maxLookAngle: 35
-  inventoryOpen: 0
---- !u!114 &60968595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60968588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22339d67c22013468a16ba695172531, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraPivot: {fileID: 0}
-  mainCamera: {fileID: 0}
-  mouseSensitivity: 120
-  minY: -20
-  maxY: 45
 --- !u!1 &66851445
 GameObject:
   m_ObjectHideFlags: 0
